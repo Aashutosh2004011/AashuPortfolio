@@ -1,16 +1,8 @@
-"use client"
 import SocialLinks from '@/components/ui/socialLinks'
-import { ArrowRight, Download } from 'lucide-react'
+import { ViewWorkButton, DownloadCVButton } from '@/components/ui/client-buttons'
 import Image from 'next/image';
 
 const Hero = () => {
-  const handleDownloadCV = () => {
-    window.open('/UpdatedResume.pdf', '_blank');
-  };
-  const viewMyWork = () => {
-    window.open('https://github.com/Aashu-king', '_blank')
-  }
-
   return (
     <section className="min-h-screen flex items-center justify-center pt-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto w-full">
@@ -42,20 +34,8 @@ const Hero = () => {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="group inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 rounded-full font-medium transition-all duration-200 transform hover:scale-105"
-                onClick={viewMyWork}
-              >
-                View My Work
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-
-              <button
-                onClick={handleDownloadCV}
-                className="inline-flex items-center justify-center px-8 py-4 border border-gray-600 hover:border-gray-500 rounded-full font-medium text-gray-300 hover:text-white transition-all duration-200 hover:bg-gray-800/50"
-              >
-                <Download className="mr-2 h-4 w-4" />
-                Download CV
-              </button>
+              <ViewWorkButton />
+              <DownloadCVButton pdfPath="/AashutoshResume-2.pdf" />
             </div>
 
             {/* Social Links */}
@@ -93,8 +73,7 @@ const Hero = () => {
                 <div className="w-full h-full rounded-full overflow-hidden bg-gray-900">
                   {/* Replace with your actual image */}
                   <div className="w-full h-full bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center text-6xl">
-                    <Image src={'/Profile2.png'} alt='Profile' width={370}  // Add required width
-                      height={200} />
+                    <Image src={'/Profile2.png'} alt='Profile' width={370} height={200} />
                   </div>
                 </div>
               </div>
